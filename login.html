@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitely | Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA==" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/tailwind.min.css">
+    <link rel="stylesheet" href="./css/hamburgers.min.css">
+    <link rel="stylesheet" href="css/floating-wpp.min.css">
+</head>
+<style>
+    :root{
+        --primary: #B3241B;
+        --secondary: #E99838;
+    }
+    body{
+        font-family: 'Quicksand';
+    }
+    .bg-primary{
+        background-color: var(--primary);
+    }
+    .text-primary{
+        color: var(--primary);
+    }
+    .text-secondary{
+        color: var(--secondary);
+    }
+    .btn-bg-trans{
+        background-color: rgba(255, 255, 255, 0.27);
+    }
+    .btn-border{
+        border: 3px solid var(--secondary);
+    }
+    @media screen and (min-width: 768px){
+        .headText{
+            font-size: 38px;
+            line-height: 38px;
+        }
+    }
+    @media screen and (max-width: 767px){
+        nav{
+            transition: .4s ease;
+        }
+        .nav-collapsed{
+            margin-top: -140%;
+            transition: .4s ease;
+        }
+    }
+    
+</style>
+<body class="bg-gray-50">
+        <div class="w-full lg:hidden z-40 p-8 absolute" x-data="{ active: false }">
+            <div class="hamburger text-white bg-primary rounded-lg float-right is-active mx-auto w-max" :class="{ 'hamburger--3dx': active == true}" @click="active = ! active">
+            <div class="hamburger-box" >
+              <div class="hamburger-inner"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="">
+        <div class="absolute z-40 rounded-3xl mt-6 lg:-mt-6 ml-10 bg-white shadow-xl lg:px-6 lg:py-8 lg:pt-4 py-2 px-4">
+            <img src="./img/bitely.png" alt="Bitely!" class="w-32 mt-0 lg:mt-6">
+        </div>
+    </div>
+
+    <nav class="absolute mx-auto w-full z-0 nav-collapsed">
+        <div class="lg:bg-transparent bg-gray-50 lg:ml-auto lg:w-max lg:pt-10 pt-32 p-10">
+            <ul class="lg:flex lg:text-white items-center font-semibold">
+                <a href="./index.html"><li class="lg:px-8 py-2">Home</li></a>
+                <a href="./blog.html"><li class="lg:px-8 py-2">Blog</li></a>
+                <a href="./about.html"><li class="lg:px-8 py-2">About</li></a>
+                <a href="./register.html"><li class="py-2"><button class="btn-border btn-bg-trans focus:outline-none hover:shadow-lg rounded-full px-8 py-3 lg:mx-2">Restaurant Registration</button></li></a>
+                <a href=""><li class="py-2"><button class="btn-border btn-bg-trans focus:outline-none hover:shadow-lg rounded-full px-8 py-3">Login</button></li></a>
+            </ul>
+        </div>
+    </nav>
+    <script>
+        $('.hamburger').on('click', function(){
+            $('nav').toggleClass('nav-collapsed');
+        })
+    </script>
+    <div class="bg-primary px-10 py-32 items-center pt-32">
+        <div class="lg:flex mt-16">
+        <form action="" class="lg:px-6 px-1 py-4 lg:w-6/12 w-full">
+            <h1 class="font-semibold text-white text-xl lg:text-3xl text-center my-6">Login Form</h1>
+            <input placeholder="Username" type="text" class="px-6 py-3 my-1 bg-white rounded-full w-full shadow-inner focus:outline-none">
+            <input placeholder="Password" type="password" class="px-6 py-3 my-1 bg-white rounded-full w-full shadow-inner focus:outline-none">
+            <button class="px-4 py-2 font-semibold text-white focus:outline-none mt-3 rounded-full w-full shadow-inner focus:outline-none btn-border btn-bg-trans"> Login <i class="fa fa-chevron-right"></i></button>
+            <div class="py-2 text-center">
+                <a href="./register.html" class="text-white my-3">New here? Sign Up!</a>
+            </div>
+        </form>
+    </div>
+    </div>
+    <footer class="bg-gray-100 lg:px-32 py-10">
+        <h1 class="text-center lg:text-sm text-xs py-4">UniqueOn tech services.ltd © 2020. All Rights Reserved.</h1>
+        <div class="w-max mx-auto">
+            <a href="https://www.instagram.com/bitely.in/?igshid=kv6jxdl6t16n"><button class="px-3 py-2 bg-gray-200 rounded-full"><i class="fab fa-instagram text-pink-400"></i></button></a>
+            <a href="https://www.facebook.com/bitely.in.3"><button class="px-3 py-2 bg-gray-200 rounded-full"><i class="fab fa-facebook text-blue-600"></i></button></a>
+            <a href="https://www.youtube.com/channel/UCvjElCrhnXg4dJkd0f_NoVA"><button class="px-3 py-2 bg-gray-200 rounded-full"><i class="fab fa-youtube text-red-500"></i></button></a>
+        </div>
+    </footer>
+    <div id="WAButton"></div>
+    <script src="js/floating-wpp.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
